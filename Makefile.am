@@ -1,0 +1,2 @@
+bin_PROGRAMS=metakeysquash
+metakeysquash_SOURCES=metakeysquash.c
