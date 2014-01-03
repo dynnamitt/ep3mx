@@ -5,12 +5,16 @@
 
 #define BUFSIZE 2048
 
-int print_a_message(const char *msg)
-{
-    printf("A STRING: %s\n", msg);
+#ifdef XML_LARGE_SIZE
+#if defined(XML_USE_MSC_EXTENSIONS) && _MSC_VER < 1400
+#define XML_FMT_INT_MOD "I64"
+#else
+#define XML_FMT_INT_MOD "ll"
+#endif
+#else
+#define XML_FMT_INT_MOD "l"
+#endif
 
-    return 0;
-}
 
 int
 main(int argc, char *argv[])
@@ -24,9 +28,11 @@ main(int argc, char *argv[])
   do {
     int len = (int)fread(buf, 1, sizeof(buf), stdin);
     done = len < sizeof(buf);
+
     if (XML_Parse(parser, buf, len, done) == XML_STATUS_ERROR) {
-      sentinel("boyy");
-      /* sentinel( "%s at line %" XML_FMT_INT_MOD "u\n", XML_ErrorString(XML_GetErrorCode(parser)), XML_GetCurrentLineNumber(parser)); */
+      sentinel( "XML %s at line %" XML_FMT_INT_MOD "u\n", 
+          XML_ErrorString(XML_GetErrorCode(parser)), 
+          XML_GetCurrentLineNumber(parser));
     }
 
   } while (!done);
