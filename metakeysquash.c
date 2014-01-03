@@ -20,7 +20,7 @@ int
 main(int argc, char *argv[])
 {
   char buf[BUFSIZE];
-  XML_Parser parser = XML_ParserCreate(NULL);
+  XML_Parser parser = XML_ParserCreateNS(NULL);
   int done;
   int depth = 0;
   XML_SetUserData(parser, &depth);
