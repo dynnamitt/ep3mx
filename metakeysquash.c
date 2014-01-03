@@ -20,11 +20,13 @@ int
 main(int argc, char *argv[])
 {
   char buf[BUFSIZE];
-  XML_Parser parser = XML_ParserCreateNS(NULL);
+  XML_Parser parser = XML_ParserCreateNS(NULL,':');
   int done;
   int depth = 0;
   XML_SetUserData(parser, &depth);
+
   /* XML_SetElementHandler(parser, startElement, endElement); */
+
   do {
     int len = (int)fread(buf, 1, sizeof(buf), stdin);
     done = len < sizeof(buf);

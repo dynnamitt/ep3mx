@@ -4,6 +4,7 @@ CFLAGS= -g -Wall -O3
 LDLIBS= -lexpat
 CC=c99
 
+
 .PHONY: check ctags 
 
 check: $(P)
@@ -20,4 +21,4 @@ aux_headers/expat.h : aux_headers/
 
 ctags: tags
 tags: aux_headers/expat.h
-	ctags -R 
+	ctags -R -I XMLPARSEAPI --c-kinds=+px
