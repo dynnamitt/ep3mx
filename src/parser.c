@@ -17,16 +17,20 @@
 
 
 int
-main(int argc, char *argv[])
+parse()
 {
   char buf[BUFSIZE];
-  XML_Parser parser = XML_ParserCreateNS(NULL,':');
+  XML_Parser parser = XML_ParserCreateNS(NULL,'\t');
+  check_mem(parser);
+
   int done;
   int depth = 0;
+
   XML_SetUserData(parser, &depth);
 
-  /* XML_SetElementHandler(parser, startElement, endElement); */
+  /* XML_SetElementHandler(parser, startElement, endElement); */ 
 
+  // main parse loop
   do {
     int len = (int)fread(buf, 1, sizeof(buf), stdin);
     done = len < sizeof(buf);
