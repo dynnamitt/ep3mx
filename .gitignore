@@ -3,3 +3,5 @@ tags
 build/
 *.o
 aux_headers/
+tests/tests.log
+tests/parser_tests
