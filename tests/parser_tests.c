@@ -1,15 +1,17 @@
 #include "minunit.h"
+#include <parser.h>
 
 char *test_parse1()
 {
-    return parse();
+    ep3parse(stdin);
+    return NULL;
 }
 
 
 char *all_tests() {
     mu_suite_start();
 
-    mu_run_test(test_pase1);
+    mu_run_test(test_parse1);
 
     return NULL;
 }

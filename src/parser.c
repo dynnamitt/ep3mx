@@ -2,22 +2,10 @@
 #include <ctype.h>
 #include "dbg.h"
 #include "expat.h"
-
-#define BUFSIZE 2048
-
-#ifdef XML_LARGE_SIZE
-#if defined(XML_USE_MSC_EXTENSIONS) && _MSC_VER < 1400
-#define XML_FMT_INT_MOD "I64"
-#else
-#define XML_FMT_INT_MOD "ll"
-#endif
-#else
-#define XML_FMT_INT_MOD "l"
-#endif
+#include "parser.h"
 
 
-int
-parse(FILE* fin)
+int ep3parse(FILE* xml)
 {
   char buf[BUFSIZE];
   XML_Parser parser = XML_ParserCreateNS(NULL,'\t');
@@ -32,7 +20,7 @@ parse(FILE* fin)
 
   // main parse loop
   do {
-    int len = (int)fread(buf, 1, sizeof(buf), fin);
+    int len = (int)fread(buf, 1, sizeof(buf), xml);
     done = len < sizeof(buf);
 
     if (XML_Parse(parser, buf, len, done) == XML_STATUS_ERROR) {
