@@ -17,7 +17,7 @@
 
 
 int
-parse()
+parse(FILE* fin)
 {
   char buf[BUFSIZE];
   XML_Parser parser = XML_ParserCreateNS(NULL,'\t');
@@ -32,7 +32,7 @@ parse()
 
   // main parse loop
   do {
-    int len = (int)fread(buf, 1, sizeof(buf), stdin);
+    int len = (int)fread(buf, 1, sizeof(buf), fin);
     done = len < sizeof(buf);
 
     if (XML_Parse(parser, buf, len, done) == XML_STATUS_ERROR) {

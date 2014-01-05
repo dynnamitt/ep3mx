@@ -2,5 +2,4 @@
 tags
 build/
 *.o
-metakeysquash
 aux_headers/
