@@ -3,7 +3,7 @@
 
 char *test_parse1()
 {
-    ep3parse(stdin);
+    ep3mx_parse(stdin,NULL);
     return NULL;
 }
 

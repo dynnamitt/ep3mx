@@ -2,6 +2,7 @@
 #define parser_h
 
 #include <stdio.h>
+#include <expat.h>
 
 #define BUFSIZE 10240
 
@@ -15,6 +16,14 @@
 #define XML_FMT_INT_MOD "l"
 #endif
 
-int ep3parse(FILE *xml);
+//default impl of conf_ep3mx_handlers interface
+void simple_elname_printer(XML_Parser p);
+
+
+void startElement(void *userData, const char *name, const char **atts);
+
+typedef void (*conf_ep3mx_handlers)(XML_Parser p);
+
+int ep3mx_parse(FILE *xml, const conf_ep3mx_handlers setter);
 
 #endif
