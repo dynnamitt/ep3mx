@@ -1,14 +1,22 @@
 *.swp
 tags
 *.o
+src/libep3parser.a
 aux_headers/
 
 # ----- autotools ------
 autom4te.cache/
 configure
+config.status
 Makefile.in
 config.h.in
 missing
 depcomp
 compile
 install-sh
+Makefile
+config.h
+stamp-h1
+config.log
+.deps
+
