@@ -1,7 +1,14 @@
 *.swp
 tags
-build/
 *.o
 aux_headers/
-tests/tests.log
-tests/parser_tests
+
+# ----- autotools ------
+autom4te.cache/
+configure
+Makefile.in
+config.h.in
+missing
+depcomp
+compile
+install-sh
