@@ -1,8 +1,12 @@
 *.swp
 tags
 *.o
-src/libep3parser.a
 aux_headers/
+*.*~
+
+# ----- products ------
+src/libep3parser.a
+src/parse-stdin
 
 # ----- autotools ------
 autom4te.cache/
@@ -20,4 +24,7 @@ stamp-h1
 config.log
 .deps
 *.tar.gz
-
+test-driver
+tests/*.log
+tests/*.sh
+tests/*.sh.trs

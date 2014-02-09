@@ -2,7 +2,7 @@
 #define parser_h
 
 #include <stdio.h>
-#include <expat.h>
+#include "expat.h"
 
 #define BUFSIZE 10240
 

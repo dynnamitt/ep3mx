@@ -12,13 +12,14 @@ AC_PROG_CC
 AC_PROG_RANLIB
 
 # Checks for libraries.
+AC_SEARCH_LIBS([XML_ParserCreateNS],[expat])
 
 # Checks for header files.
-AC_CHECK_HEADERS([stdlib.h string.h wchar.h])
+AC_CHECK_HEADERS([expat.h stdlib.h string.h wchar.h])
 
 # Checks for typedefs, structures, and compiler characteristics.
 AC_TYPE_SIZE_T
-AC_CONFIG_FILES([Makefile src/Makefile])
+AC_CONFIG_FILES([Makefile src/Makefile tests/Makefile])
 # Checks for library functions.
 
 AC_OUTPUT
