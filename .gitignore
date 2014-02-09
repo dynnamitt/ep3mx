@@ -1,12 +1,13 @@
 *.swp
+*.swo
 tags
 *.o
 aux_headers/
 *.*~
 
 # ----- products ------
-src/libep3parser.a
-src/parse-stdin
+src/libopf-handler.a
+src/parse-ep3
 
 # ----- autotools ------
 autom4te.cache/
@@ -28,3 +29,5 @@ test-driver
 test/*.log
 test/*.sh
 test/*.sh.trs
+test/libtest*
+test/test*

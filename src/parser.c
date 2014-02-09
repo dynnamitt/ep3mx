@@ -1,16 +1,6 @@
-#include <stdio.h>
-#include <ctype.h>
-#include "dbg.h"
-#include "expat.h"
 #include "parser.h"
 
-
-// type conf_ep3mx_handlers
-void simple_elname_printer(XML_Parser p){
-
-    XML_SetStartElementHandler(p,startElement);
-
-}
+#define BUFSIZE 10240
 
 void
 startElement(void *userData, const char *name, const char **atts)
@@ -26,10 +16,9 @@ startElement(void *userData, const char *name, const char **atts)
 
 
 
-int
-ep3mx_parse(FILE* xml,
-    const conf_ep3mx_handlers conf_hndlers )
+int main (int argc, char** argv)
 {
+  FILE* xml = stdin;
   char buf[BUFSIZE];
   XML_Parser parser = XML_ParserCreateNS(NULL,'\t');
   check_mem(parser);
@@ -38,12 +27,7 @@ ep3mx_parse(FILE* xml,
   int depth = 0;
 
   XML_SetUserData(parser, &depth);
-
-  if(conf_hndlers == NULL){
-    simple_elname_printer(parser);
-  }else{
-    conf_hndlers(parser);
-  }
+  XML_SetStartElementHandler(parser,startElement);
 
   // main parse loop
   do {

@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libep3parser.a
-libep3parser_a_SOURCES = parser.c
+noinst_LIBRARIES = libopf-handler.a
+libopf_handler_a_SOURCES = opf-handler.c
 
-bin_PROGRAMS = parse-stdin
-parse_stdin_SOURCES = parse-stdin.c
-parse_stdin_LDADD = libep3parser.a
+bin_PROGRAMS = parse-ep3
+parse_ep3_SOURCES = parser.c
+parse_ep3_LDADD = libopf-handler.a
