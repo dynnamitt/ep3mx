@@ -19,7 +19,7 @@ AC_CHECK_HEADERS([expat.h stdlib.h string.h wchar.h])
 
 # Checks for typedefs, structures, and compiler characteristics.
 AC_TYPE_SIZE_T
-AC_CONFIG_FILES([Makefile src/Makefile tests/Makefile])
+AC_CONFIG_FILES([Makefile src/Makefile test/Makefile])
 # Checks for library functions.
 
 AC_OUTPUT

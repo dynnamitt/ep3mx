@@ -25,6 +25,6 @@ config.log
 .deps
 *.tar.gz
 test-driver
-tests/*.log
-tests/*.sh
-tests/*.sh.trs
+test/*.log
+test/*.sh
+test/*.sh.trs
