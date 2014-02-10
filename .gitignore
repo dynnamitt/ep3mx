@@ -5,11 +5,11 @@ tags
 aux_headers/
 *.*~
 
-# ----- products ------
+# -- products --
 src/libopf-handler.a
 src/parse-ep3
 
-# ----- autotools ------
+# -- autotools --
 autom4te.cache/
 configure
 config.status
@@ -29,5 +29,5 @@ test-driver
 test/*.log
 test/*.sh
 test/*.sh.trs
-test/libtest*
-test/test*
+test/libtest*.a
+test/*-test
