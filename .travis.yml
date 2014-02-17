@@ -4,7 +4,7 @@ compiler:
   - clang
   - gcc
 
-script: "./configure && make && make check"
+script: "./configure && make && make check && make distcheck"
 
 before_install:
   - sudo apt-get update -qq
