@@ -28,6 +28,6 @@ config.log
 test-driver
 test/*.log
 test/*.sh
-test/*.sh.trs
+test/*.trs
 test/libtest*.a
 test/*-test
