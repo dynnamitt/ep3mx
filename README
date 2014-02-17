@@ -1,4 +1,3 @@
-image:https://travis-ci.org/dynnamitt/ep3mx.png?branch=master["Build Status",
-link="https://travis-ci.org/dynnamitt/ep3mx"]
+https://travis-ci.org/dynnamitt/ep3mx.png?branch=master
 
 Shell friendly (+JSON) EPUB parsing tool
