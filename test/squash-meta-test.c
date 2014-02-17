@@ -7,7 +7,7 @@
 int main(void){
 
   // head def
-  SLIST_HEAD(head_s, opfmeta_entry_s) opfmeta_head;
+  opfmeta_head_s opfmeta_head;
 
   // head init
   SLIST_INIT(&opfmeta_head);

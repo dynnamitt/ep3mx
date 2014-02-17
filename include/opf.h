@@ -1,4 +1,13 @@
+#ifndef opf_h
+#define opf_h
+
 #include <sys/queue.h>
+
+
+#ifndef METAVAL_JOIN_STR
+#define METAVAL_JOIN_STR ", "
+#endif
+
 
 /**
  *
@@ -29,9 +38,17 @@ typedef struct opfmeta_entry_s {
 } opfmeta_entry_s;
 
 /*
- * \c opfmeta_slist_head SLIST_HEAD 
+ * head struct typedef
+ */
+typedef SLIST_HEAD(opfmeta_head_s, opfmeta_entry_s) opfmeta_head_s;
+
+
+/*
+ * \c opfm_h = opfmeta_slist_head 
  *
  * returns a squashed (set) version of param
  *
  */
-opfmeta_entry_s *squash_opfmeta(const opfmeta_entry_s *opfmeta_slist_head);
+opfmeta_head_s *squash_opfmeta(const opfmeta_head_s *opfm_h);
+
+#endif

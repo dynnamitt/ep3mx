@@ -14,7 +14,7 @@ parse_test_LDADD = libtest-handler.a
 
 # compile `squash-meta` using local file
 #
-squash_meta_test_SOURCES = squash-meta.c 
+squash_meta_test_SOURCES = squash-meta-test.c 
 squash_meta_test_LDADD = $(top_srcdir)/src/libopf-handler.a 
 
 check_SCRIPTS = parse_sample.sh
