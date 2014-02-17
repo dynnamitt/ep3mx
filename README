@@ -1,4 +1,4 @@
+image:https://travis-ci.org/dynnamitt/ep3mx.png?branch=master["Build Status",
+link="https://travis-ci.org/dynnamitt/ep3mx"]
 
 Shell friendly (+JSON) EPUB parsing tool
-
-[![Build Status](https://travis-ci.org/jirikuncar/invenio.png?branch=pu)](https://travis-ci.org/jirikuncar/invenio)
